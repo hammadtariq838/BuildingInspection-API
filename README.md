@@ -1,8 +1,21 @@
 # Building Inspection - API
 
-1. `virtualenv venv`
-2. `pip install -r .\requirements.txt`
-3. `python manage.py migrate`
-4. `python .\manage.py createsuperuser`
-5. `python .\manage.py runserver`
-6. `python manage.py makemigrations`
+## First Time Setup
+```bash
+  virtualenv venv
+  pip install -r requirements.txt
+  python manage.py migrate
+```
+### Create Super User
+```bash
+  python manage.py createsuperuser
+```
+## Running the server
+```bash
+  python manage.py runserver
+```
+## Check & Create Migrations
+```bash
+  python manage.py makemigrations
+  python manage.py migrate
+```
