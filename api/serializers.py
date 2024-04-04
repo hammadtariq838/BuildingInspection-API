@@ -18,16 +18,18 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = '__all__'
-        # extra_kwargs = {"project_owner": {"read_only": True}}
-
-
-class AssetSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Asset
-        fields = '__all__'
+        extra_kwargs = {"project_owner": {"read_only": True}}
 
 
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Result
+        fields = '__all__'
+
+
+class AssetSerializer(serializers.ModelSerializer):
+    results = ResultSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Asset
         fields = '__all__'
