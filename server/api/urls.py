@@ -9,6 +9,7 @@ router.register(r'action', ActionViewSet, basename='action')
 router.register(r'method', MethodViewSet, basename='method')
 
 urlpatterns = [
+  path('auth/', include('api.auth.urls')),
 	path('', include(router.urls)),
 ]
 
